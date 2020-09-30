@@ -1,0 +1,84 @@
+body {
+    background-color: #4D6B6E;
+    color: #20647A;
+    display: flex;
+    padding: 10%;
+}
+.container > div {   
+    padding: 2em;
+}
+.left-aligned-section {
+    background-color: #B1D6F0;
+    flex: 3;
+}
+.right-aligned-section {
+    background-color: #DCF4FA;
+    flex: 4;
+}
+h1, h2, h3, h4 {
+    color: #305157;
+}
+hr {
+    border-top: 1px solid #35828C;
+}
+li {
+    list-style-type: none;
+}
+i {
+    margin-right: 2%;
+}
+.header-section {
+    text-align: center;
+}
+.my-image {
+    width: 30%;
+    border-radius: 50%;
+    display: block;
+    margin: 4% auto;
+}
+.my-position {
+    background-color: #335757;
+    margin: auto -10%;
+    padding: 5%;
+    color: #BFD6D6;  
+    border: 5px solid #DCF4FA;
+    border-left: 0;
+}
+.info-lists dt {
+    font-weight: 600;
+}
+.info-lists dd {
+    position: relative;
+    left: 10%;
+    padding: 0.5em;
+}
+.skills {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+}
+.skills li {
+    margin: 0.4em;
+    border: 1px solid transparent;
+    border-radius: 10%;
+    background-image: linear-gradient(#B1D6F0, #DCF4FA);
+    padding: 5%;
+    font-weight: 900;
+}
+.profile-section, .experience-section ul li, .resources-section ul li a {
+    line-height: 1.5;
+}
+.resources-section ul li a {
+    text-decoration: none;
+    color: #20647A;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        display: block;
+        padding: 0;
+    }   
+    .skills {
+        display: block;
+    }
+}
