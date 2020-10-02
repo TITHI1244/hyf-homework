@@ -1,7 +1,7 @@
 body {
     background-color: #4D6B6E;
     color: #20647A;
-    display: flex;
+    display: flex; /* flexbox used to divide the left and right sections */
     padding: 10%;
 }
 .container > div {   
@@ -26,7 +26,8 @@ li {
 }
 i {
     margin-right: 2%;
-}
+} 
+/* styling for header section */
 .header-section {
     text-align: center;
 }
@@ -44,6 +45,7 @@ i {
     border: 5px solid #DCF4FA;
     border-left: 0;
 }
+/* styling for info section */
 .info-lists dt {
     font-weight: 600;
 }
@@ -68,11 +70,16 @@ i {
 .profile-section, .experience-section ul li, .resources-section ul li a {
     line-height: 1.5;
 }
+/* styling for resource section */
 .resources-section ul li a {
     text-decoration: none;
     color: #20647A;
+    cursor: pointer;
 }
-
+.resources-section ul li a:hover {
+    opacity: 0.8;
+}
+/* styling for mobile version */
 @media screen and (max-width: 800px) {
     .container {
         display: block;
