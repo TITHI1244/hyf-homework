@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 3%;
+    padding: 0;
+}
+body {
+    background-color: #F8F8F8;
+    margin: 1% 5%;
+    position: relative;
+    line-height: 1.5;
+    font-size: x-large;
+}
+/* header */
+header {
+    font-size: 0.8rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    border: 1px solid;
+    padding: 20px 15px;
+    width: 10%;
+    background-color: #D3D3D3;
+}
+.navigation {
+    border: 1px solid;
+    padding: 20px 100px;
+    width: 40%;
+    background-color:#D3D3D3;
+}
+/* main */
+.details-section {
+    width: 60%;
+}
+progress {
+    width: 100%;
+    height: 8vh;
+    border: 1.5px solid #A8A8A8;
+}
+progress::-webkit-progress-bar {
+    background-color: white;
+}
+progress::-webkit-progress-value {
+    background-color: #C0C0C0;
+}
+.grid-container {
+    margin: auto 0;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+input, select {
+    height: 8vh;
+    width: 18vw;
+}
+.profile-container {
+    display: grid;
+    grid-template-columns: 25% 80%;
+    justify-content: space-between;
+}
+.description-textarea {
+    width: 100%;
+    margin: auto 0;
+}
+.description-p p {
+    font-size: small;
+}
+textarea {
+    width: 100%;
+    margin-left: 0;
+}
+.different-shipping {
+    display: none;   
+}
+#shippingAddress:not(:checked) ~ .different-shipping{
+    display: block;
+}
+.signup-paragraph {
+    margin-bottom: 0;
+}
+.signup-category {
+    display: inline;
+}
+.signup-category label {
+    margin-right: 0;
+}
+.signup-category input {
+    margin: auto -10% auto -8%;
+}
+.grid-container-images {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.your-style-images {
+    display: inline-block;
+}
+input[name=apparal] {
+    width: 15%;
+    display: inline;
+    vertical-align: middle;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+}
+.flex-container div {
+    margin: auto 0;
+}
+.flex-container div label {
+    margin: auto 0;
+}
+.btn-submit {
+    width: 20%;
+    position: relative;
+    top: 100px;
+    left: 70%;   
+    margin: auto 0 5% 0;   
+    padding: 30px;
+}
+.btn-submit button {
+    padding: 2%;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+}

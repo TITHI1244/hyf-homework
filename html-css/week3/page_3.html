@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Sign up to yourcustomtailor.com</h1>
+        <h2>Step 3/4 - Time to learn about your preferences?</h2>
+        <label for="progress">Progress</label>
+        <progress id="progress" max="100" value="50"></progress>
+        <form action="page_4.html">
+            <p>What kind of items are you interested in offers on?</p>
+            <div>
+                <label for="apparal">Apparal</label>
+                <input type="checkbox" name="apparal" id="apparal">
+                <label for="jewelry">Jewelry</label>
+                <input type="checkbox" name="jewelry" id="jewelry">
+                <label for="accessories">Accessories</label>
+                <input type="checkbox" name="accessories" id="accessories">
+                <label for="shoes">Shoes</label>
+                <input type="checkbox" name="shoes" id="shoes">
+                <label for="handbags">Handbags</label>
+                <input type="checkbox" name="handbags" id="handbags">
+            </div>
+            
+            <p>Choose the images that best resemble your style</p>
+            <div class="grid-container-images">
+                <div>
+                    <img class="your-style-images" src="https://picsum.photos/200" alt="random pics">
+                    <span>Select</span> 
+                    <input id="try" type="checkbox" name="apparal">
+                </div>
+                <div>
+                    <img class="your-style-images" src="https://picsum.photos/200" alt="random pics">
+                    <span>Select</span> 
+                    <input type="checkbox" name="apparal">
+                </div>
+                <div>
+                    <img class="your-style-images" src="https://picsum.photos/200" alt="random pics">
+                    <span>Select</span> 
+                    <input type="checkbox" name="apparal">
+                </div>
+                <div>
+                    <img class="your-style-images" src="https://picsum.photos/200" alt="random pics">
+                    <span>Select</span> 
+                    <input type="checkbox" name="apparal">
+                </div>
+                <div>
+                    <img class="your-style-images" src="https://picsum.photos/200" alt="random pics">
+                    <span>Select</span> 
+                    <input type="checkbox" name="apparal">
+                </div>
+                <div>
+                    <img class="your-style-images" src="https://picsum.photos/200" alt="random pics">
+                    <span>Select</span> 
+                    <input type="checkbox" name="apparal">
+                </div>
+                <div>
+                    <img class="your-style-images" src="https://picsum.photos/200" alt="random pics">
+                    <span>Select</span> 
+                    <input type="checkbox" name="apparal">
+                </div>
+                <div>
+                    <img class="your-style-images" src="https://picsum.photos/200" alt="random pics">
+                    <span>Select</span> 
+                    <input type="checkbox" name="apparal">
+                </div>
+            </div>
+            <div class="btn-submit">
+                <input type="submit" value="Next step">
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>

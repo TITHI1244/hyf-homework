@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h4>Logo</h4>
+        </div>
+        <div class="navigation">
+            <h4>Navigation</h4>
+        </div>
+    </header>
+    <main>
+        <section class="details-section">
+            <h1>Sign up to yourcustomtailor.com</h1>
+            <p>We can't wait to help you improve your life-style and gain the attention from people around you!</p>
+            <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand-picked selection - we just need to know a few details about your first...</p>
+        </section>
+        <section class="progress-section">
+            <h2>Step 1/4 - tell us who you are?</h2>
+            <label for="progress">Progress</label>
+            <progress id="progress" max="100" value="0"></progress>
+            <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:</p>
+        </section>
+
+        <form action="page_2.html">
+            <div class="grid-container">
+                <div>
+                    <label for="firstName">First name* </label>
+                    <input type="text" name="firstName" id="firstName" required>
+                </div>
+                <div>
+                    <label for="lastName">Last name*</label>
+                    <input type="text" name="lastName" id="lastName" required>
+                </div>
+                <div>
+                    <label for="country">Country*</label>
+                    <select id="country" name="country">
+                        <option value="">Select a country</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Finland">Finland</option>
+                    </select>
+                </div>
+                <div>
+                </div>
+                <div>
+                    <label for="streetAddress">Street address*</label>
+                    <input type="text" id="streetAddress" name="streetAddress" required>
+                </div>
+                <div>
+                    <label for="postCode">Post code*</label>
+                    <input type="number" id="postCode" pattern="/^(?:[1-24-9]\d{3}|3[0-8]\d{2})$/" required>
+                </div>
+            </div>                
+            
+            <div class="profile-container">
+                <div class="description-p">
+                    <label for="description">Profile description</label>
+                    <p>Please provide a short description of yourself to be displayed on our social community pages.</p>
+                </div>
+                <div class="description-textarea">
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                </div>                
+            </div>
+
+            <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
+            <label for="shippingAddress">Shipping address</label>
+            <input type="checkbox" id="shippingAddress" value="shippingAddress" checked>
+            
+            <div class="different-shipping">
+                <h2>Shipping address</h2>
+                <div class="grid-container">
+                    <div>
+                        <label for="firstName">First name* </label>
+                        <input type="text" name="firstName" id="firstName">
+                    </div>
+                    <div>
+                        <label for="lastName">Last name*</label>
+                        <input type="text" name="lastName" id="lastName">
+                    </div>
+                    <div>
+                        <label for="country">Country*</label>
+                        <select id="country" name="country">
+                            <option value="">Select a country</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Finland">Finland</option>
+                        </select>
+                    </div>
+                    <div>
+                    </div>
+                    <div>
+                        <label for="streetAddress">Street address*</label>
+                        <input type="text" id="streetAddress" name="streetAddress">
+                    </div>
+                    <div>
+                        <label for="postCode">Post code*</label>
+                        <input type="number" id="postCode" pattern="/^(?:[1-24-9]\d{3}|3[0-8]\d{2})$/">
+                    </div>
+                </div>              
+                
+                <div class="profile-container">
+                    <div class="description-p">
+                        <label for="description">Profile description</label>
+                        <p>Please provide a short description of yourself to be displayed on our social community pages.</p>
+                    </div>
+                    <div class="description-textarea">
+                        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                    </div>                
+                </div>
+            </div>
+
+            <div class="btn-submit">
+                <input type="submit" value="Next step">
+            </div> 
+        </form>
+        
+        
+    </main>
+</body>
+</html>

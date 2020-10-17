@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Sign up to yourcustomtailor.com</h1>
+        <h2>Step 2/4 - how can we reach you?</h2>
+        <label for="progress">Progress</label>
+        <progress id="progress" max="100" value="25"></progress>
+        <p>We probably need to stay in touch somehow. Let us know how we can reach you?</p>
+        <form action="page_3.html">
+            <div class="grid-container">
+                <div>
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" pattern="[1-9]{1}[0-9]{7}" required>
+                </div>
+            </div>
+            <div>
+                <label for="password">Password*</label>
+                <input type="password" id="password" name="password" minlength="8" required>
+            </div>
+            <div>
+                <label for="password">Re-enter password*</label>
+                <input type="password" id="password" name="password" minlength="8" required>
+            </div>
+            
+            <p class="signup-paragraph">I want to sign up for the newsletter.</p>
+            <div class="signup-category">
+                <label for="weekly">Weekly news</label>
+                <input type="radio" id="weekly" name="weekly" value="weekly">
+            </div>
+            <div class="signup-category">
+                <label for="monthly">Monthly news</label>
+                <input type="checkbox" id="monthly" name="monthly" value="monthly">
+            </div>
+            <div class="signup-category">
+                <label for="no-news">Don't send me news</label>
+                <input type="checkbox" id="no-news" name="no-news" value="no-news">
+            </div>
+            <div class="btn-submit">
+                <input type="submit" value="Next step">
+            </div>
+        </form>
+    </main>
+</body>
+</html>
