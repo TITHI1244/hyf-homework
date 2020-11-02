@@ -6,7 +6,7 @@ let dogOrHumanString = " dog ";
 let shouldShowResultInDogYears = true;
 
 if(!shouldShowResultInDogYears) {
-    dogYear = dogYear * 7;
+    dogYear *= 7;
     dogOrHumanString = " human ";
 }
 
