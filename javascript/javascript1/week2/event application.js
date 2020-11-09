@@ -30,7 +30,7 @@ function getRemainder(days) {
     return days % 7;
 }
 
-let currentDayIndex = new Date().getDay();
+const currentDayIndex = new Date().getDay();
 const remainingDays = 9;
-let eventDayIndex = getRemainder(remainingDays + currentDayIndex);
+const eventDayIndex = getRemainder(remainingDays + currentDayIndex);
 console.log(`The event day is:  ${calculateEventDay(eventDayIndex)}.`);
