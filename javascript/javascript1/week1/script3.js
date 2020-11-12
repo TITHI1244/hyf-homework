@@ -10,8 +10,10 @@ let priceDifference = PetersHouseActualPrice - houseCalculatedPrice;
 
 if(priceDifference > 0) {
     console.log("Peter is paying " + Math.abs(priceDifference) + " too much for the house.");
-} else {
+} else if(priceDifference < 0) {
     console.log("Peter is paying " + Math.abs(priceDifference) + " too little for the house.");
+} else {
+    console.log("Wow!!! The price exactly matches our calculted price. Go for it!!!");
 }
 
 // for Julia's house
@@ -26,6 +28,8 @@ priceDifference = JuliasHouseActualPrice - houseCalculatedPrice;
 
 if(priceDifference > 0) {
     console.log("Julia is paying " + Math.abs(priceDifference) + " too much for the house.");
-} else {
+} else if(priceDifference < 0) {
     console.log("Julia is paying " + Math.abs(priceDifference) + " too little for the house.");
+} else {
+    console.log("Wow!!! The price exactly matches our calculted price. Go for it!!!");
 }
