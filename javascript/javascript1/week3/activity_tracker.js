@@ -2,16 +2,17 @@ const activities = [];
 
 // Adding an activity
 function addActivity(date, activity, duration) {
-    let activityObject = {};
-    activityObject.date = date; //new Date().toLocaleDateString()
-    activityObject.activity = activity;
-    activityObject.duration = duration;
+    let activityObject = {
+        date: date, //new Date().toLocaleDateString()
+        activity: activity,
+        duration: duration
+    }
     activities.push(activityObject);
 }
 
 addActivity("10.11.2020", "Youtube", 30);
 addActivity("10.11.2020", "Facebook", 40);
-addActivity("11.11.2020", "Youtube", 20);
+addActivity("11.11.2020", "Facebook", 20);
 addActivity("12.11.2020", "Youtube", 20);
 console.log(activities);
 
@@ -25,11 +26,7 @@ function showStatus() {
         status = "Add some activities before calling showStatus";
     } else {
         for(let i = 0; i < activities.length; i++) {
-            for(const [key, value] of Object.entries(activities[i])) {
-                if(key === "duration") {
-                    totalSpentTime += value;
-                } 
-            }
+            totalSpentTime += activities[i].duration;
         } status = `You have added ${activities.length} activities. They amount to ${totalSpentTime} min. of usage`;
     }  
     if(myLimit <= totalSpentTime) {
@@ -41,13 +38,10 @@ console.log(showStatus());
 // todays' activity only
 const todaysActivities = [];
 function showStatusForToday() {
-    for(let i = 0; i < activities.length; i++) {
-        for(const [key, value] of Object.entries(activities[i])) {
-            if((key === "date") && (value === new Date().toLocaleDateString())){
-                todaysActivities.push(activities[i]);
-                break;
-            } 
-        } 
+    for(let activity of activities) {
+        if(activity.date === new Date().toLocaleDateString()) {
+            todaysActivities.push(activity);
+        }
     }
 }
 showStatusForToday();
@@ -57,16 +51,12 @@ console.log(todaysActivities);
 let facebookTime = 0;
 let youtubeTime = 0;
 function getHighestActivity() {
-    for(let i = 0; i < activities.length; i++) {   
-        for(const [key, value] of Object.entries(activities[i])) {
-            if((key === "activity") && (value === "Facebook")) {
-                facebookTime += activities[i].duration;
-                break;
-            } else if((key === "activity") && (value === "Youtube")) {
-                youtubeTime += activities[i].duration;
-                break;
-            } 
-        } 
+    for(let activity of activities) {
+        if(activity.activity === "Facebook") {
+            facebookTime += activity.duration;
+        } else if(activity.activity === "Youtube") {
+            youtubeTime += activity.duration;
+        }
     }
     return (Math.max(facebookTime, youtubeTime) === facebookTime) ?  "facebook" : "youtube";
 }

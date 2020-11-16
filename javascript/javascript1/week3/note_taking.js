@@ -3,9 +3,10 @@ const notes = [];
 
 // Save a note
 function saveNote(content, id) {
-    let noteObject = {};
-    noteObject.content = content;
-    noteObject.id = id;
+    let noteObject = {
+        content: content,
+        id: id
+    };
     notes.push(noteObject);
 }
 
@@ -16,44 +17,31 @@ console.log(notes);
 // Get a note
 function getNote(id) {
     let noteIndex;
-    let noteContent = "";
     if((id === undefined) || (typeof(id) !== 'number')) {
-        noteContent = "Please enter a valid id first!!!";
+        return "Please enter a valid id first!!!";
     } else {
         for(let i = 0; i <= notes.length; i++) {
-            if(noteIndex !== undefined) {
-                break;
-            } else if((noteIndex === undefined) && (i === notes.length)) {
-                noteContent = "No note exists for this id";
-                return noteContent;
+            if((noteIndex === undefined) && (i === notes.length)) {
+                return "No note exists for this id";
             } else {
-                for(const [key, value] of Object.entries(notes[i])) {
-                    if(value === id) {
-                        noteIndex = i;
-                        break;
-                    }
-                } 
+                if(notes[i].id === id) {
+                    noteIndex = i;
+                    break;
+                }
             }    
         }
-        noteContent = notes[noteIndex].content; 
+        return notes[noteIndex].content; 
     }
-    return noteContent;
 }
-console.log(getNote(-10));
+console.log(getNote(1));
 
 // Log out notes
 function logOutNotesFormatted() {
-    for(let i = 0; i < notes.length; i++) {
-        let noteId;
-        let noteContent;
-        for(const [key, value] of Object.entries(notes[i])) {
-            if(key === "content") {
-                noteContent = value;
-            } else if(key === "id") {
-                noteId = value;
-            } 
-        } console.log(`The note with id: ${noteId}, has the following note text: ${noteContent}`);
-    } 
+    for(let note of notes) {
+        let noteId = note.id;
+        let noteContent = note.content;
+        console.log(`The note with id: ${noteId}, has the following note text: ${noteContent}`);
+    }
 }
 logOutNotesFormatted(); 
 
@@ -61,14 +49,10 @@ logOutNotesFormatted();
 function deleteFinishedTask(id) {
     let noteIndex;
     for(let i = 0; i < notes.length; i++) {
-        if(noteIndex === undefined) {
-            for(let [key, value] of Object.entries(notes[i])) {
-                if((key === "id") && (value === id)) {
-                    noteIndex = i;
-                    break;
-                }
-            }
-        } 
+        if(notes[i].id === id) {
+            noteIndex = i;
+            break;
+        }
     }
     notes.splice(noteIndex, 1);
     return notes;
