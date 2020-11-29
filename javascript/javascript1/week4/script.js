@@ -6,7 +6,7 @@ function getReply(command) {
 
     /* Hello my name is Benjamin - Should save the name benjamin. 
     and respond with "nice to meet you Benjamin". What if someone writes this twice?*/
-    if(command.includes("Hello my name is ")) {
+    if(command.startsWith("Hello my name is ")) {
         if(userNames.includes(name)) {
             response = `Hi again ${name}.`;
         } else {
@@ -17,7 +17,7 @@ function getReply(command) {
         userNames.push(name);
     }
     // What is my name - should respond with the name of the person. What if the name has not yet been mentioned?
-    if(command.includes("What is my name")) {
+    else if(command.startsWith("What is my name")) {
         if(userNames.length === 0) {
             response = `Hey there. Can you tell me your name first?`
         } else {
@@ -26,7 +26,7 @@ function getReply(command) {
     }   
     // Add fishing to my todo - Should respond with "fishing added to your todo". Should add fishing to a list of todos
     //Add singing in the shower to my todo - Should add singing in the shower to a list of todos
-    if(command.includes("Add") && command.includes("to my todo")) { 
+    if(command.startsWith("Add") && command.endsWith("to my todo")) { 
         let item = command.replace("Add ", "");
         let newTodo = item.replace(" to my todo", "");
         myTodo.push(newTodo);
@@ -35,7 +35,7 @@ function getReply(command) {
     }
 
     // Remove fishing from my todo - Should respond with "Removed fishing from your todo"
-    if(command.includes("Remove") && command.includes("from my todo")) {
+    else if(command.startsWith("Remove") && command.endsWith("from my todo")) {
         let item = command.replace("Remove ", "");
         let deleteTodo = item.replace(" from my todo", "");
         const itemIndex = myTodo.indexOf(deleteTodo);
@@ -45,7 +45,7 @@ function getReply(command) {
     }
     
     // What is on my todo? - should respond with the todos. Fx you have 2 todos - fishing and singing in the shower
-    if(command.includes("What is on my todo")) {
+    else if(command.startsWith("What is on my todo")) {
         if(myTodo.length === 1) {
             response = `you have ${myTodo.length} todo - `;
         } else {
@@ -66,38 +66,35 @@ function getReply(command) {
 
     // What day is it today? - Should respond with the date in a human readable format.
     // E.g. if today is 30/8/2019 then it should respond with 30. of August 2019
-    if(command.includes("What day is it today")) {
+    else if(command.includes("What day is it today")) {
         const todaysDate = new Date();
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         response = `${todaysDate.getDate()}. of ${months[todaysDate.getMonth()]} ${todaysDate.getFullYear()}`;
     }
 
     // Should be able to do simple math. fx what is 3 + 3 should respond with 6. Or what is 4 * 12 should respond with 48
-    if(command.includes("what is ")) {
-        const actualTask = command.replace("what is ", "");
-        const firstOperand = parseInt(actualTask);
-        if(actualTask.includes("+")) {
-            const n = actualTask.replace(firstOperand, "");
-            const secondOperand = parseInt(n.replace(" + ", ""));
-            response = firstOperand + secondOperand;
-        } else if(actualTask.includes("-")) {
-            const n = actualTask.replace(firstOperand, "");
-            const secondOperand = parseInt(n.replace(" - ", ""));
-            response = firstOperand - secondOperand;
-        } else if(actualTask.includes("*")) {
-            const n = actualTask.replace(firstOperand, "");
-            const secondOperand = parseInt(n.replace(" * ", ""));
-            response = firstOperand * secondOperand;
-        } else if(actualTask.includes("/")) {
-            const n = actualTask.replace(firstOperand, "");
-            const secondOperand = parseInt(n.replace(" / ", ""));
-            response = firstOperand / secondOperand;
+    else if (command.startsWith("what is")) {
+        const commandWords = command.split(" ");
+        const number1 = parseInt(commandWords[2]);
+        const number2 = parseInt(commandWords[4]);
+        const operation = commandWords[3];
+        if (number1 && number2) {
+            switch (operation) {
+            case "+":
+            return number1 + number2;
+            case "-":
+            return number1 - number2;
+            case "*":
+            return number1 * number2;
+            case "/":
+            return number1 / number2;
         }
     }
+}
 
     // Set a timer for 4 minutes - Should respond with "Timer set for 4 minutes". 
     // When 4 minutes is up: "Timer done". How do we set a timer in js? Google is your friend here!
-    if(command.includes("Set a timer for ")) {
+    else if(command.startsWith("Set a timer for ")) {
         const timerTime = parseInt(command.replace("Set a timer for ", ""));
         response = `Timer set for ${timerTime} seconds`;
         setTimeout(function(){
@@ -107,7 +104,7 @@ function getReply(command) {
 
     // Extra: Set an interval for 4 minutes and log every 3 seconds - Should respond with the time remaining. 
     // When 4 minutes is up: "Timer done". 
-    if(command.includes("Set an interval for ")) {
+    else if(command.startsWith("Set an interval for ")) {
         const intervalTime = parseInt(command.replace("Set an interval for ", ""));  
         setTimeout(stopInterval, intervalTime * 1000);
         response = `Interval set for ${intervalTime} seconds`;
@@ -115,7 +112,7 @@ function getReply(command) {
             clearInterval(intervalFunction);
             console.log("Done");
         } 
-        var intervalFunction = setInterval(intervalLog, 3000);
+        const intervalFunction = setInterval(intervalLog, 3000);
         function intervalLog() {
             console.log('I am an alert message appear in every 3 seconds');
         }       
