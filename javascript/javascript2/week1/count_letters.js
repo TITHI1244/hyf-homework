@@ -1,30 +1,22 @@
+"use strict"
 function countDanishLetters(inputString) {
     let countÆ = 0;
     let countØ = 0;
     let countÅ = 0;
+    let count = {
+        total: countÆ + countØ + countÅ 
+    };
     for(let letter of inputString) {
         if(letter.toLowerCase() === 'æ') {
             countÆ++;
-        }
-        if(letter.toLowerCase() === 'ø') {
+            count.æ = countÆ;
+        } else if(letter.toLowerCase() === 'ø') {
             countØ++;
-        }
-        if(letter.toLowerCase() === 'å') {
+            count.ø = countØ;
+        } else if(letter.toLowerCase() === 'å') {
             countÅ++;
+            count.å = countÅ;
         }
-    }
-    const count = {
-        total: countÆ + countØ + countÅ,
-        æ: countÆ,
-        ø: countØ,
-        å: countÅ 
-    };
-    if(countÆ === 0) {
-        delete count.æ;
-    } if(countØ === 0) {
-        delete count.ø;
-    } if(countÅ === 0) {
-        delete count.å;
     }
     return count;
 }
