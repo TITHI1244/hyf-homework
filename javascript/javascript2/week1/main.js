@@ -20,13 +20,9 @@ function renderProducts(products) {
         liElement.appendChild(h2Element);
 
         // create a span element and append to the li, assign the product price to its text
-        const spanElement = document.createElement("span");
-        spanElement.innerHTML = `price: ${product.price}`;
-        liElement.appendChild(spanElement);
-
-        // create a br element and append to the li to separate the lines
-        const brElement = document.createElement("br");
-        liElement.appendChild(brElement);
+        const divElement = document.createElement("div");
+        divElement.innerHTML = `price: ${product.price}`;
+        liElement.appendChild(divElement);
 
         // create another span element and append to the li, assign the product rating to its text
         const spanElement2 = document.createElement("span");
