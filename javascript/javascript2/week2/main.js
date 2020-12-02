@@ -6,7 +6,7 @@ const lovedProducts = document.getElementById("loved-prducts");
 let lovedProductsNo = parseInt(lovedProducts.innerHTML);
 // after clicking the 'like_product' button, remove it
 function addProduct(event) {
-    lovedProducts.innerHTML = lovedProductsNo++;
+    lovedProducts.innerHTML = ++lovedProductsNo;
     const targetedButtonId = event.target.parentElement.id;
     const targetedButton = document.getElementById(targetedButtonId).childNodes[4];
     document.getElementById(targetedButtonId).removeChild(targetedButton);
