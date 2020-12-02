@@ -1,0 +1,88 @@
+<head>
+    <title>HyfBay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,800"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <div id="logo">
+            <li><a href="#">H Y F</a></li>
+          </div>
+          <div id="inputs">
+            <input type="text" id="search_products_name" name="search_products_name" placeholder="Search for a product">
+          </div>
+          <div id="icons">
+            <li><a href="#"><i class="fas fa-user"></i></a></li>
+            <li><a href="#"><i class="fas fa-heart"></i></a><span id="loved-prducts">0</span></li>
+          </div>         
+      </ul>
+    </nav>
+    <div class="filter">
+      <button>Filter products</button>
+      <ul class="filter-contents">
+        <li><input type="number" id="search_min_price" name="search_min_price" placeholder="Set minimum price"></li>
+        <li><input type="number" id="search_max_price" name="search_max_price" placeholder="Set maximum price"></li>
+        <li><input type="number" id="search_products_rating" name="search_products_rating" placeholder="Set minimum rating"></li>
+        <li><input type="button" id="filter_button" name="filter_button" value="Filter"></li>
+      </ul>
+    </div>
+    <main id="products">
+      <div id="rendered_products">
+
+      </div>
+    </main>
+    <footer id="contact">
+      <section>
+        <h3>Get to know us</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Career with us</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Payment methods</h3>
+        <ul>
+            <li><a href="#">Visa card</a></li>
+            <li><a href="#">Master card</a></li>
+            <li><a href="#">Paypal</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Let us help you</h3>
+        <ul>
+            <li><a href="#">Your account</a></li>
+            <li><a href="#">Your order status</a></li>
+            <li><a href="#">Returns and replacements</a></li>
+            <li><a href="#">Contact help desk</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Contact us</h3>
+        <ul>
+            <li><a href="#"><i class="fas fa-map-marker"></i>Address: somevej 100, 0000 Copenhagen.</a></li>
+            <li><a href="#"><i class="fas fa-phone"></i>Phone: 1234 5678</a></li>
+            <li><a href="#"><i class="fas fa-envelope-square"></i>Email: hyf@gmail.com</a></li>
+        </ul>
+      </section>
+    </footer>
+    <div class="follow-us">
+      <div>
+        <a href=""><i class="fab fa-facebook-square"></i></a>
+        <a href=""><i class="fab fa-twitter-square"></i></i></a>
+        <a href=""><i class="fab fa-google-plus-square"></i></i></a>
+      </div>
+      <div>
+        @copyright HyfBay, <span id="currentYear"></span>
+      </div>      
+    </div>
+    <script src="hyfBayHelpers.js"></script>
+    <script src="main.js"></script>
+  </body>
