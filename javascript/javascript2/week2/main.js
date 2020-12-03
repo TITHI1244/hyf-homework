@@ -64,9 +64,10 @@ const inputElement2 = document.getElementById("search_min_price");
 const inputElement3 = document.getElementById("search_max_price");
 const inputElement4 = document.getElementById("search_products_rating");
 const filterButton = document.getElementById("filter_button");
-// Set some initial values
-let minPrice = 0;
-let maxPrice = 10000;
+// Set some initial values; for prices, if user does not specify any values, take the lowest and highest prices as min and maxPrice
+const productsPrice = products.map((product) => product.price);
+let minPrice = productsPrice.reduce((accumulator, currentValue) => (accumulator < currentValue) ? accumulator : currentValue, products[0].price);
+let maxPrice = productsPrice.reduce((accumulator, currentValue) => (accumulator > currentValue) ? accumulator : currentValue, products[0].price);
 let minRating = 0;
 
 function onNameChange(event) {
