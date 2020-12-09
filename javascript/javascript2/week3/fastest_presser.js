@@ -25,6 +25,7 @@ function beginningState() {
 }
 function gameFinished() {
     clearInterval(startInterval);
+    document.removeEventListener("keydown", updateScore);
     resultDiv.style.backgroundColor = "tan";
     if(scoreLeft === 0 && scoreRight === 0) {
         winningMsg.innerHTML = "Have you paid attention? You need to press a key, either 'l' or 's'.";
@@ -44,6 +45,7 @@ function startTheGame() {
     if(duration.value === "") {
         alert("Please enter the game duration first to start...");
     } else {
+        document.addEventListener("keydown", updateScore);
         const gameDuration = parseInt(duration.value);
         startBtn.disabled = true;
         counter.innerHTML = (gameDuration < 10) ? ("0" + gameDuration) : gameDuration;
@@ -70,7 +72,6 @@ function updateScore(event) {
         document.getElementById("score-player-right").innerHTML = scoreRight;
     } 
 }
-document.addEventListener("keydown", updateScore);
 
 
 
