@@ -3,17 +3,17 @@ console.log("Script loaded");
 
 let products = getAvailableProducts();
 const lovedProducts = document.getElementById("loved-prducts");
-let lovedProductsNo = parseInt(lovedProducts.innerHTML);
+let lovedProductsNumber = parseInt(lovedProducts.innerHTML);
 // after clicking the 'like_product' button, remove it
-function addProduct(event) {
-    lovedProducts.innerHTML = ++lovedProductsNo;
-    const targetedButtonId = event.target.parentElement.id;
+function addProduct(product) {
+    lovedProducts.innerHTML = ++lovedProductsNumber;
+    const targetedButtonId = product.target.parentElement.id;
     const targetedButton = document.getElementById(targetedButtonId).childNodes[4];
     document.getElementById(targetedButtonId).removeChild(targetedButton);
 }
 
 function renderProducts(products) {
-    const renderedDivElement = document.getElementById("rendered_products");
+    const renderedDivElement = document.getElementById("rendered-products");
     renderedDivElement.innerHTML = "";
     // create a ul element and append to the body
     const ulElement = document.createElement("ul");
@@ -59,11 +59,11 @@ function renderProducts(products) {
 
 renderProducts(products);
 // Get all the user input values and save
-const inputElement1 = document.getElementById("search_products_name");
-const inputElement2 = document.getElementById("search_min_price");
-const inputElement3 = document.getElementById("search_max_price");
-const inputElement4 = document.getElementById("search_products_rating");
-const filterButton = document.getElementById("filter_button");
+const inputElement1 = document.getElementById("search-products-name");
+const inputElement2 = document.getElementById("search-min-price");
+const inputElement3 = document.getElementById("search-max-price");
+const inputElement4 = document.getElementById("search-products-rating");
+const filterButton = document.getElementById("filter-button");
 // Set some initial values; for prices, if user does not specify any values, take the lowest and highest prices as min and maxPrice
 const productsPrice = products.map((product) => product.price);
 let minPrice = productsPrice.reduce((accumulator, currentValue) => (accumulator < currentValue) ? accumulator : currentValue, products[0].price);
@@ -74,7 +74,7 @@ function onNameChange(event) {
     renderProducts(products.filter((product) => product.name.toLowerCase().startsWith(event.target.value.toLowerCase())));
 }
 // After clicking on filter button, set the predefined variebles as per user choice and call render method
-function onFilter() {
+function getFilteredProducts() {
     if(inputElement2.value !== "") {
         minPrice = inputElement2.value;
     } if(inputElement3.value !== "") {
@@ -89,10 +89,6 @@ function renderOnFilter() {
     renderProducts(products.filter((product) => (product.price >= minPrice && product.price <= maxPrice && product.rating >= minRating)));
 }
 inputElement1.addEventListener("input", onNameChange);
-filterButton.addEventListener("click", onFilter);
-
-function getNoOfLikedProducts() {
-    console.log("jhg")
-}
+filterButton.addEventListener("click", getFilteredProducts);
 
 document.getElementById("currentYear").innerHTML = new Date().getFullYear();

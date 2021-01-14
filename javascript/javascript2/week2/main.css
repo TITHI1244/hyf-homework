@@ -91,7 +91,7 @@ nav ul li {
 .filter ul li input:hover {
     border: 1px ridge #25807b;
 }
-.filter #filter_button {
+.filter #filter-button {
     height: 5%;
     float: right;
     border: 2px ridge #25807b;
@@ -101,7 +101,7 @@ nav ul li {
     display: inline;
 }
 /* products */
-#rendered_products ul {
+#rendered-products ul {
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
     justify-content: space-around;
