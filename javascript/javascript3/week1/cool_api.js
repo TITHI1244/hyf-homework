@@ -6,6 +6,10 @@ function onChange(event) {
 }
 input.addEventListener("input", onChange);
 
+function convertTemperatureIntoCelcius(x) {
+    return `${Math.floor(x - 273.15)}°`;
+}
+
 function showCurrentWeather() {
     if(userInput === "") {
         alert("Please type your city name first...");
@@ -22,7 +26,7 @@ function showCurrentWeather() {
             icon.innerText = `${response.weather[0].main}`;
             mainDiv.appendChild(icon);
             const temp = document.createElement("h1");
-            temp.innerText = `${Math.floor(response.main.temp - 273.15)}°`;
+            temp.innerText = convertTemperatureIntoCelcius(response.main.temp);
             mainDiv.appendChild(temp);
 
             const hrElement = document.createElement("hr");
@@ -30,8 +34,8 @@ function showCurrentWeather() {
 
             const paragraph = document.createElement("p");
             const description = `Today: ${response.weather[0].description} currently. It's ${temp.innerText}, 
-            the high today was forecast as ${Math.floor(response.main.temp_max - 273.15)}° and 
-            the low today was forecast as ${Math.floor(response.main.temp_min - 273.15)}°.`;
+            the high today was forecast as ${convertTemperatureIntoCelcius(response.main.temp_max)} and 
+            the low today was forecast as ${convertTemperatureIntoCelcius(response.main.temp_min)}.`;
             paragraph.innerText = description;
             mainDiv.appendChild(paragraph);
             const hrElement2 = document.createElement("hr");
@@ -44,14 +48,14 @@ function showCurrentWeather() {
             currentTemp.innerText = `Current temperature: ${temp.innerText}`;
             infoDiv.appendChild(currentTemp);
             const feelsLike = document.createElement("h3");
-            feelsLike.innerText = `Feels like: ${Math.floor(response.main.feels_like - 273.15)}°`;
+            feelsLike.innerText = `Feels like: ${convertTemperatureIntoCelcius(response.main.feels_like)}`; 
             infoDiv.appendChild(feelsLike);
 
             const maxTemp = document.createElement("h3");
-            maxTemp.innerText = `Maximum today: ${Math.floor(response.main.temp_max - 273.15)}°`;
+            maxTemp.innerText = `Maximum today: ${convertTemperatureIntoCelcius(response.main.temp_max)}`; 
             infoDiv.appendChild(maxTemp);
             const minTemp = document.createElement("h3");
-            minTemp.innerText = `Minimum today: ${Math.floor(response.main.temp_min - 273.15)}°`;
+            minTemp.innerText = `Minimum today: ${convertTemperatureIntoCelcius(response.main.temp_min)}°`;
             infoDiv.appendChild(minTemp);
 
             const sunrise = document.createElement("h3");
