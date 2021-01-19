@@ -88,7 +88,7 @@ insert into task (id, title, description, created, updated, due_date, status_id,
 insert into task (id, title, description, created, updated, due_date, status_id, user_id) values (35, 'Learn about NoSQL databases', 'MongoDB, CouchDB, etc.', '2017-10-20 01:41:53', '2017-10-04 07:19:56', '2017-12-23 10:13:42', 2, NULL);
 
 --Find out how many tasks are in the task table
-SELECT COUNT(*)
+SELECT COUNT(0)
 FROM task; 
 --35
 
