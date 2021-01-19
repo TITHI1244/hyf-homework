@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <div id="logo">
+        <li><a href="#">X Y Z</a></li>
+      </div>
+      <div id="user">
+        <li><a href="#"><i class="fas fa-user"></i></a></li>
+        <li>
+          <div class="dropdown">
+            <button class="dropdown-button">Currency<i class="fas fa-caret-down"></i></button>
+            <div class="dropdown-contents">
+              <a id="usd" href="#">$</a>
+              <a id="eur" href="#">€</a>
+              <a id="gbp" href="#">£</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#"><i class="fas fa-shopping-cart"></i><span id="total-in-cart"></span></a></li>
+      </div>         
+    </ul>
+  </nav>
+  <div class="search">
+    <input type="text" id="search" name="search" placeholder="Search for a product">
+    <ul id="searched-products">
+
+    </ul>
+    <div id="modal">
+      <div><span class="close">&times;</span>
+        <h3>Product name: <span id="product-name"></span></h3>
+        <h3>Quantity: <span id="product-quantity"></span></h3>
+        <h3>Price: <span id="product-price"></span></h3>
+      </div>
+    </div>
+  </div>
+  <div id="products">
+    
+  </div>
+  <button id="checkout">Check out</button>
+  <div id="checkout-modal">
+    <div>
+      <h2>Please check the following information.</h2>
+      <h3>Name: <span class="user-name"></span></h3>
+      <h3>Email: <span class="user-email"></span></h3>
+      <h3>Phone: <span class="user-phone"></span></h3>
+      <h3>Address: <span class="user-address"></span></h3>
+      <button class="checked">Done</button>
+    </div>
+  </div>
+  <footer>
+      @copyright X Y Z, <span id="currentYear"></span>
+  </footer>
+  <script src="cart.js"></script>
+</body>
+</html>
