@@ -98,9 +98,12 @@ runAfterDelay(3, function() {
 
 /* Check if we have double clicked on the page. A double click is defined by two clicks within 0.5 seconds. 
 If a double click has been detected, log out the text: "double click!" */
-document.addEventListener("dblclick", function() {
-    console.log("double click");
-});
+function logAfterLittleDelay() {
+    setTimeout(function() {
+        console.log("The page has been clicked!!!")
+    }, 3000);
+}
+document.addEventListener("click", logAfterLittleDelay);
 
 /* Create a function called jokeCreator that has three parameters: shouldTellFunnyJoke - boolean,
  logFunnyJoke - function and logBadJoke - function. 
