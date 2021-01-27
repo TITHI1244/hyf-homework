@@ -12,6 +12,6 @@ CREATE TABLE Student(
     class_id INT NOT NULL,
     CONSTRAINT FOREIGN KEY (class_id) REFERENCES Class(id)
 );
-CREATE INDEX idx_name ON Student(name);
+CREATE INDEX idx_name ON Student(id);
 ALTER TABLE Class ADD status ENUM('not-started', 'ongoing', 'finished') NOT NULL;
 SELECT * FROM Class;
