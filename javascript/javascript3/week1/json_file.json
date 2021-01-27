@@ -1,0 +1,65 @@
+[{
+    "name": "Ex Machina",
+    "released_year": 2014,
+    "genre": ["sci-fi", "thriller"],
+    "director": "Alex Garland",
+    "duration": "108 minutes",
+    "rating": {
+        "Rotten Tomatoes": "92%",
+        "IMDB": "7.7",
+        "Metacritic": "78%"
+    },
+    "personal_rating": 8
+}, 
+{
+    "name": "Transcendence",
+    "released_year": 2014,
+    "genre": ["sci-fi", "thriller"],
+    "director": "Wally Pfister",
+    "duration": "119 minutes",
+    "rating": {
+        "Rotten Tomatoes": "19%",
+        "IMDB": "6.3",
+        "Metacritic": "42%"
+    },
+    "personal_rating": 6
+}, 
+{
+    "name": "The Notebook",
+    "released_year": 2004,
+    "genre": ["romance", "drama"],
+    "director": "Nick Cassavetes",
+    "duration": "124 minutes",
+    "rating": {
+        "Rotten Tomatoes": "53%",
+        "IMDB": "7.8",
+        "Metacritic": "53%"
+    },
+    "personal_rating": 8
+}, 
+{
+    "name": "WALL-E",
+    "released_year": 2008,
+    "genre": ["sci-fi", "romance"],
+    "director": "Andrew Stanton",
+    "duration": "97 minutes",
+    "rating": {
+        "Rotten Tomatoes": "95%",
+        "IMDB": "8.4",
+        "Metacritic": "95%"
+    },
+    "personal_rating": 9
+}, 
+{
+    "name": "Train to Busan",
+    "released_year": 2016,
+    "genre": ["action", "horror"],
+    "director": "Yeon Sang-ho",
+    "duration": "118 minutes",
+    "rating": {
+        "Rotten Tomatoes": "94%",
+        "IMDB": "7.6",
+        "Metacritic": "72%"
+    },
+    "personal_rating": 6.5
+}]
