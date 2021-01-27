@@ -31,7 +31,7 @@ CREATE TABLE Members(
     name varchar(255),
     email varchar(255),
     address varchar(255),
-    phone INT
+    phone INT DEFAULT 45
 );
 CREATE TABLE Book_member(
 	book_id INT NOT NULL,
