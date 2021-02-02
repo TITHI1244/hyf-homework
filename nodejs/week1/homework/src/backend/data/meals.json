@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "title" : "Indian food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious indian food",
+        "createdAt" : "2019/12/7 14:34",
+        "price" : 67
+    }, 
+    {
+        "id" : 2,
+        "title" : "Mexican food in the summer",
+        "maxNumberOfGuests" : 4,
+        "description" : "A sunny day out eating delicious mexican food",
+        "createdAt" : "2019/12/8 11:34",
+        "price" : 87
+    }, 
+    {
+        "id" : 3,
+        "title" : "Italian food in the summer",
+        "maxNumberOfGuests" : 14,
+        "description" : "A warm day out eating delicious Italian food",
+        "createdAt" : "2019/12/10 10:34",
+        "price" : 50
+    }
+]
