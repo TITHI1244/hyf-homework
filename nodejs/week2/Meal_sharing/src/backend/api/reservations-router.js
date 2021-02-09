@@ -22,7 +22,7 @@ router.get("/:id", async (request, response) => {
     if(reservationId !== 0) {
         reservationWithGivenId = reservations.filter(reservation => reservation.id === parseInt(request.params.id));
     }
-    response.send(reservationWithGivenId);
+    response.send(...reservationWithGivenId);
   } catch (error) {
     throw error;
   }

@@ -22,7 +22,7 @@ router.get("/:id", async (request, response) => {
     if(reviewId !== 0) {
         reviewWithGivenId = reviews.filter(review => review.id === parseInt(request.params.id));
     }
-    response.send(reviewWithGivenId);
+    response.send(...reviewWithGivenId);
   } catch (error) {
     throw error;
   }
