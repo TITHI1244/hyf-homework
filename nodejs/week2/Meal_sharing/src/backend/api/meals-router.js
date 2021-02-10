@@ -6,10 +6,9 @@ const meals = require("./../data/meals.json");
 // Respond with the json for all the meals & different queries
 router.get("/", async (request, response) => {
   console.log(request.query);
-if((Number.isNaN(parseInt(request.query.maxPrice)) && request.query.maxPrice !== undefined) || (Number.isNaN(parseInt(request.query.limit)) && request.query.limit !== undefined) || (Number.isNaN(Date.parse(request.query.createdAfter)) && request.query.createdAfter !== undefined)) {
-  response.status(400);
-  // response.send({ error: "Pleasye try again with valid values..." });
-}
+if((isNaN(parseInt(request.query.maxPrice)) && request.query.maxPrice !== undefined) || (isNaN(parseInt(request.query.limit)) && request.query.limit !== undefined) || (isNaN(Date.parse(request.query.createdAfter)) && request.query.createdAfter !== undefined)) {
+  response.status(400).send();
+} else {
   const limit = (request.query.limit === undefined) ? Math.max(...meals.map(meal => meal.id)) : parseInt(request.query.limit);
   const maxPrice = (request.query.maxPrice !== undefined) ? parseInt(request.query.maxPrice) : Math.max(...meals.map(meal => meal.price)) + 1;
   const title = (request.query.title !== '' && request.query.title !== undefined) ? request.query.title.toLowerCase() : '';
@@ -23,6 +22,8 @@ if((Number.isNaN(parseInt(request.query.maxPrice)) && request.query.maxPrice !==
   } catch (error) {
     throw error;
   }
+}
+  
 });
 
 // Respond with the json for the meal with the corresponding id
