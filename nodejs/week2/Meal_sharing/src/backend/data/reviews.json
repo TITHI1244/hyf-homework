@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "numberOfStars": 4,
+        "content": "Best meal ever :)",
+        "mealId": 2,
+        "createdAt": 12345
+    },
+    {
+        "id": 2,
+        "numberOfStars": 3,
+        "content": "Mouth-watering food.",
+        "mealId": 1,
+        "createdAt": 23456
+    },
+    {
+        "id": 3,
+        "numberOfStars": 5,
+        "content": "Out of this world!!!",
+        "mealId": 8,
+        "createdAt": 34567
+    },
+    {
+        "id": 4,
+        "numberOfStars": 3,
+        "content": "Delicious food",
+        "mealId": 9,
+        "createdAt": 45678
+    },
+    {
+        "id": 5,
+        "numberOfStars": 2,
+        "content": "Mediocre food, but lovely spot...",
+        "mealId": 4,
+        "createdAt": 56789
+    }
+  ]
