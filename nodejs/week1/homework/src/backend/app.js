@@ -8,7 +8,7 @@ const reviews = require("./data/reviews");
 
 // added reviews for all meals
 function getAllMealsWithReviews() {
-  meals.map(meal => {
+  meals.foreach(meal => {
     let matchedReviews = [];
     reviews.map(review => {
       if (meal.id === review.mealId) {
