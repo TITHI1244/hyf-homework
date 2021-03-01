@@ -13,7 +13,13 @@ function Header() {
   return (
     <div>
       <h3>TodoList</h3>
-      <p>You have used {timer} seconds on this website.</p>
+      <p>
+        You have used{" "}
+        {timer < 60
+          ? timer
+          : Math.floor(timer / 60) + " minute/s & " + (timer % 60)}{" "}
+        seconds on this website.
+      </p>
     </div>
   );
 }
