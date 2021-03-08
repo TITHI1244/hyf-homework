@@ -9,7 +9,7 @@ const api_url =
 function TodoList() {
   const [itemsArray, setItemsArray] = useState([]);
   const [newDescription, setNewDescription] = useState("");
-  const [newDeadline, setNewDeadline] = useState(new Date());
+  const [newDeadline, setNewDeadline] = useState(null);
 
   const fetchFromApi = () => {
     fetch(api_url)
@@ -31,7 +31,8 @@ function TodoList() {
     setNewDeadline(toDate(input));
   };
 
-  const addNewItem = () => {
+  const addNewItem = (e) => {
+    e.preventDefault();
     const newDeadlineMonth =
       newDeadline.getMonth() + 1 < 10
         ? `0${newDeadline.getMonth() + 1}`
@@ -62,26 +63,34 @@ function TodoList() {
 
   return (
     <div>
-      <div>
-        <label htmlFor="description">Todo description</label>
-        <input
-          type="text"
-          id="description"
-          placeholder="description"
-          value={newDescription}
-          onChange={addNewDescription}
-          required
-        />
-      </div>
-      <div>
-        <DatePicker
-          required
-          selected={newDeadline}
-          onChange={addNewDeadline}
-          minDate={new Date()}
-        />
-      </div>
-      <button onClick={addNewItem}>Add todo</button>
+      <form onSubmit={addNewItem}>
+        <div>
+          <label htmlFor="description">Todo description</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            placeholder="description"
+            value={newDescription}
+            onChange={(e) => {
+              e.target.value === ""
+                ? alert("Please type a description first...")
+                : addNewDescription(e);
+            }}
+            required
+          />
+        </div>
+        <div>
+          <DatePicker
+            required
+            name="deadline"
+            selected={newDeadline}
+            onChange={addNewDeadline}
+            minDate={new Date()}
+          />
+        </div>
+        <button type="submit">Add todo</button>
+      </form>
       {itemsArray.length > 0 ? (
         <ul>
           {itemsArray.map((todo) => (

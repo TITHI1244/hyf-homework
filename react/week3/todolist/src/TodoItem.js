@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import StyleComponent from "./StyleComponent";
+import PropTypes from "prop-types";
 
 function TodoItem({ id, description, deadline, onDelete }) {
   const [isDone, setIsDone] = useState(false);
@@ -43,5 +44,11 @@ function TodoItem({ id, description, deadline, onDelete }) {
     </div>
   );
 }
+
+TodoItem.propTypes = {
+  description: PropTypes.string,
+  deadline: PropTypes.string,
+  onDelete: PropTypes.func,
+};
 
 export default TodoItem;
