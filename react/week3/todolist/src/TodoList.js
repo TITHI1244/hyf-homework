@@ -47,6 +47,8 @@ function TodoList() {
       deadline: newDate,
     };
     setItemsArray((prev) => [...prev, newTodo]);
+    setNewDescription("");
+    setNewDeadline(new Date());
   };
 
   const deleteItem = (e) => {
