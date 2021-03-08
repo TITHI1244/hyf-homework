@@ -81,6 +81,7 @@ function TodoList() {
           />
         </div>
         <div>
+          <label htmlFor="deadline">deadline</label>
           <DatePicker
             required
             name="deadline"
