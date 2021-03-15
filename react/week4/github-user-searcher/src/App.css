@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  margin: auto 20%;
+  padding: 5%;
+  background-color: #61dafb;
+  height: 100vh;
+}
+
+li {
+  list-style: none;
+  position: relative;
+  right: 5%;
+}
