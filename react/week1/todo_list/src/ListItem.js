@@ -1,9 +1,9 @@
 import React from "react";
 
-function ListItem(props) {
+function ListItem({title, deadline}) {
     return (
         <li>
-            {props.title}, {props.deadline}
+            {title}, {deadline}
         </li>
     )
 }
