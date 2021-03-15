@@ -1,12 +1,14 @@
 import React, { useEffect, useContext } from "react";
 import { UserContext } from "./UserContext";
 
+const githubApiLink = "https://api.github.com/search/users?q=";
+
 function UserList() {
   const userContext = useContext(UserContext);
   const getAllUsers = () => {
     if (userContext.input !== "") {
       userContext.setLoading(true);
-      fetch(`https://api.github.com/search/users?q=${userContext.input}`)
+      fetch(githubApiLink + userContext.input)
         .then((response) => response.json())
         .then((data) => {
           userContext.setLoading(false);
@@ -36,8 +38,26 @@ function UserList() {
     window.location.reload();
   };
 
+  const getUserRepo = (event) => {
+    const profileName = event.target.innerHTML;
+    fetch(githubApiLink + profileName)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          const userLogin = data.items.filter(
+            (profile) => profile.login === profileName
+          );
+          const reposLink = userLogin[0].repos_url;
+          event.target.setAttribute("href", reposLink);
+        }
+      });
+  };
+
   return (
     <div>
+      <h3>
+        Click on any of the following links to check out the repos of that user
+      </h3>
       <input
         type="text"
         name="user"
@@ -53,7 +73,11 @@ function UserList() {
         userContext.message === "" ? (
         <ul>
           {userContext.users.map((user, index) => (
-            <li key={index}>{user}</li>
+            <li key={index}>
+              <a onClick={getUserRepo} target="_blank">
+                {user}
+              </a>
+            </li>
           ))}
         </ul>
       ) : (

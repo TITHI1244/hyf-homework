@@ -12,3 +12,9 @@ li {
   left: 35%;
   text-align: left;
 }
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
