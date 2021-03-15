@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Header />
       <ul>
-          {todos.map(todo => <ListItem title={todo.title} deadline={todo.deadline} />)}
+          {todos.map((todo, index) => <ListItem key={index} title={todo.title} deadline={todo.deadline} />)}
       </ul>
     </div>
   );
